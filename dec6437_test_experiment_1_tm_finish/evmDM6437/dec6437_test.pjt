@@ -1,0 +1,102 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="C:\dvsdk_1_01_00_15\examples\dec6437_test_tst3\evmDM6437\"
+ProjectType=Executable
+CPUFamily=TMS320C64XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Tool="XDC"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\..\..\ndk_1_92_00_22_eval\packages\ti\ndk\lib\c64plus\hal\hal_ser_stub.lib"
+Source="..\..\..\ndk_1_92_00_22_eval\packages\ti\ndk\lib\c64plus\hal\hal_timer_bios.lib"
+Source="..\..\..\ndk_1_92_00_22_eval\packages\ti\ndk\lib\c64plus\miniPrintf.lib"
+Source="..\..\..\ndk_1_92_00_22_eval\packages\ti\ndk\lib\c64plus\netctrl.lib"
+Source="..\..\..\ndk_1_92_00_22_eval\packages\ti\ndk\lib\c64plus\nettool.lib"
+Source="..\..\..\ndk_1_92_00_22_eval\packages\ti\ndk\lib\c64plus\os.lib"
+Source="..\..\..\ndk_1_92_00_22_eval\packages\ti\ndk\lib\c64plus\stack.lib"
+Source="..\..\..\ndk_1_92_00_22_eval\packages\ti\ndk\lib\hal\evmdm6437\hal_eth_dm64lc.lib"
+Source="..\..\..\ndk_1_92_00_22_eval\packages\ti\ndk\lib\hal\evmdm6437\hal_userled_dm6437.lib"
+Source="audio_params.c"
+Source="audio_video_encdec.cfg"
+Source="audio_video_encdec.tcf"
+Source="boot.asm"
+Source="evmdm6437_dip.h"
+Source="evmdm6437init2.c"
+Source="helloWorld2.c"
+Source="i2c_params2.c"
+Source="main.c"
+Source="qdma_setup2.c"
+Source="SEED_DEC6437Bsl.lib"
+Source="speech_test.c"
+Source="uart485.c"
+Source="udpHello2.c"
+Source="video_test.c"
+Source="xdcpaths.dat"
+Source="link.cmd"
+
+[Generated Files]
+Source="audio_video_encdeccfg.s62"
+Source="audio_video_encdeccfg_c.c"
+Source="xdcconfig\cfg.c"
+Source="xdcconfig\linker.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -@"=$(Proj_dir)/xdcconfig/compiler.opt" -pdr -fr"$(Proj_dir)\Debug" -i"$(Proj_dir)" -i"." -i"./include" -i"%BIOSDVSDK_INSTALL_DIR%\examples\common\evmDM6437" -i"%BSL_EVMDM6437_INSTALLDIR%\include" -i"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\edma3\inc" -i"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\inc" -i"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\drivers\inc" -i"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\soc\dm6437\dsp\inc" -i"%BIOSDVSDK_INSTALL_DIR%\ndk_1_92_00_22_eval\packages\ti\ndk\inc" -i"%BIOSDVSDK_INSTALL_DIR%\ndk_1_92_00_22_eval\packages\ti\ndk\example\network\helloWorld\evmdm6437\include" -d"_DEBUG" -mv6400+
+
+["Compiler" Settings: "Release"]
+Options=-@"=$(Proj_dir)/xdcconfig/compiler.opt" -pdr -o3 -fr"$(Proj_dir)\Release" -i"$(Proj_dir)" -i"." -i"%BIOSDVSDK_INSTALL_DIR\%examples\common\evmDM6437" -i"%BSL_EVMDM6437_INSTALLDIR%\include" -i"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\edma3\inc" -i"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\inc" -i"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\drivers\inc" -i"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\soc\dm6437\dsp\inc" -d"_RELEASE" -mv6400+
+
+["DspBiosBuilder" Settings: "Debug"]
+Options=-Dconfig.importPath=".;%BIOSDVSDK_INSTALL_DIR%/examples/common/evmDM6437;"
+
+["DspBiosBuilder" Settings: "Release"]
+Options=-Dconfig.importPath=".;%BIOSDVSDK_INSTALL_DIR%/examples/common/evmDM6437;"
+
+["Linker" Settings: "Debug"]
+Options=-c -m".\Debug\dec6437_test.map" -o".\Debug\dec6437_test.out" -w -x -i"%BIOS_INSTALL_DIR%/packages/ti/rtdx/lib/c6000" -i"%BIOSDVSDK_INSTALL_DIR%\ndk_1_92_00_22_eval\packages\ti\ndk\lib\c64plus" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\lib\DM6437\Debug\i2c_bios_drv.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\lib\DM6437\Debug\palos_bios.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\lib\DM6437\Debug\prev_bios_drv.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\lib\DM6437\Debug\video_bios_drv.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\lib\DM6437\Debug\vpbe_bios_drv.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\lib\DM6437\Debug\vpfe_bios_drv.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\lib\DM6437\Debug\mcasp_bios_drv.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\lib\DM6437\Debug\mcbsp_bios_drv.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\lib\DM6437\Debug\audio_bios_drv.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\edma3\lib\Debug\edma3_drv_bios.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\edma3\lib\Debug\edma3_rm_bios.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\edma3\lib\Debug\edma3_drv_sample.lib"
+
+["Linker" Settings: "Release"]
+Options=-c -m".\Release\audio_video_encdec.map" -o".\Release\audio_video_encdec.out" -w -x -i"%BIOS_INSTALL_DIR%/packages/ti/rtdx/lib/c6000" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\lib\DM6437\Release\i2c_bios_drv.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\lib\DM6437\Release\palos_bios.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\lib\DM6437\Release\prev_bios_drv.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\lib\DM6437\Release\video_bios_drv.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\lib\DM6437\Release\vpbe_bios_drv.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\lib\DM6437\Release\vpfe_bios_drv.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\lib\DM6437\Release\mcasp_bios_drv.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\lib\DM6437\Release\mcbsp_bios_drv.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\pspdrivers\lib\DM6437\Release\audio_bios_drv.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\edma3\lib\Release\edma3_drv_bios.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\edma3\lib\Release\edma3_rm_bios.lib" -l"%BIOSDVSDK_INSTALL_DIR%\psp_1_00_02_00\edma3\lib\Release\edma3_drv_sample.lib"
+
+["XDC" Settings: "Debug"]
+Options=--xdcpathsfile="xdcpaths.dat" -tti.targets.C64P -pti.platforms.evmDM6437 -Dconfig.importPath=".../%BIOSDVSDK_INSTALL_DIR%/examples/common/evmDM6437" --tcf
+
+["XDC" Settings: "Release"]
+Options=--xdcpathsfile="xdcpaths.dat" -tti.targets.C64P -pti.platforms.evmDM6437 -Dconfig.importPath=".../%BIOSDVSDK_INSTALL_DIR%/examples/common/evmDM6437" --tcf
+
+["audio_video_encdec.tcf" Settings: "Debug"]
+ExcludeFromBuild=true
+
+["audio_video_encdec.tcf" Settings: "Release"]
+ExcludeFromBuild=true
+
+["evmdm6437_dip.h" Settings: "Debug"]
+ExcludeFromBuild=true
+
+["evmdm6437_dip.h" Settings: "Release"]
+ExcludeFromBuild=true
+
+["xdcpaths.dat" Settings: "Debug"]
+ExcludeFromBuild=true
+
+["xdcpaths.dat" Settings: "Release"]
+ExcludeFromBuild=true
+
+["xdcconfig\linker.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["xdcconfig\linker.cmd" Settings: "Release"]
+LinkOrder=1
+
+["link.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["link.cmd" Settings: "Release"]
+LinkOrder=1
+

@@ -1,0 +1,62 @@
+----------------------  audio_video_encdec.pjt - Release  ----------------------
+[audio_video_encdec.cfg] "c:\dvsdk_1_01_00_14\xdc_2_95_01\xs.exe" xdc.tools.configuro.ccs  --xdcpathsfile="xdcpaths.dat" -pti.platforms.evmDM6437 --tcf -t ti.targets.C64P -c "C:/CCStudio_v3.3/C6000/cgtools" --bios "C:/CCStudio_v3.3/bios_5_31_06" -o "xdcconfig" audio_video_encdec.cfg 
+
+Info: running XDC configuration using package path:
+C:\dvsdk_1_01_00_14\codec_engine_1_20_02\packages
+C:\dvsdk_1_01_00_14\codec_engine_1_20_02\examples
+C:\dvsdk_1_01_00_14\framework_components_1_20_03\packages
+C:\dvsdk_1_01_00_14\xdais_5_21\packages
+C:\dvsdk_1_01_00_14\codecs_1_10\packages
+C:\dvsdk_1_01_00_14\ndk_1_92_00_22_eval\packages
+C:\dvsdk_1_01_00_14\biosutils_1_00_02\packages
+C:\dvsdk_1_01_00_14\examples\common\evmDM6437
+C:\CCStudio_v3.3\bios_5_31_06\packages
+c:\dvsdk_1_01_00_14\xdc_2_95_01\packages
+
+
+The configuration step is now running:
+
+making package.mak (because of package.bld) ...
+generating interfaces for package xdcconfig (because package/package.xdc.xml is older than package.xdc) ...
+configuring audio_video_encdec.x64P from package/cfg/audio_video_encdec_x64P.cfg ...
+ti.sdo.ce.osal.close() ...
+ti.sdo.ce.osal.validate() ...
+warning: xdc.cfg.Program: "C:/dvsdk_1_01_00_14/xdc_2_95_01/packages/xdc/runtime/package.xs", line 57: xdc.cfg.Program : assignment to Program.system is deprecated
+    will link with ti.sdo.codecs.g711dec:lib/watermark/g711dec_tii.l64P
+ will link with ti.sdo.codecs.g711enc:lib/watermark/g711enc_tii.l64P
+    will link with ti.sdo.ce.speech:lib/speech.a64P
+    will link with ti.sdo.codecs.h264dec:lib/watermark/h264vdec_ti.l64P
+    will link with ti.sdo.codecs.h264enc:lib/watermark/h264venc_ti.l64P
+    will link with ti.sdo.ce.video:lib/video.a64P
+    will link with ti.sdo.ce:lib/ce.a64P
+    will link with ti.sdo.ce.osal:lib/osal_bios.a64P
+    will link with ti.sdo.fc.acpy3:acpy3.a64P
+    will link with ti.bios.utils:lib/utils.a64P
+    will link with ti.sdo.ce.utils.xdm:lib/XdmUtils.a64P
+    will link with ti.sdo.fc.dman3:dman3Cfg.a64P
+    will link with ti.sdo.fc.dskt2:dskt2.a64P
+    will link with ti.sdo.ce.node:lib/node.a64P
+    will link with ti.sdo.ce.trace:lib/gt.a64P
+cl64P package/cfg/audio_video_encdec_x64P.c ...
+asm64P package/cfg/audio_video_encdec_x64Pcfg.s62 ...
+cl64P package/cfg/audio_video_encdec_x64Pcfg_c.c ...
+
+[audio_params.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -@"=c:/dvsdk_1_01_00_14/examples/audio_video_encdec/evmDM6437/xdcconfig/compiler.opt" -pdr -o3 -fr"c:/dvsdk_1_01_00_14/examples/audio_video_encdec/evmDM6437/Release" -i"c:/dvsdk_1_01_00_14/examples/audio_video_encdec/evmDM6437" -i"." -i"examples/common/evmDM6437" -i"C:/CCStudio_v3.3/boards/evmdm6437_v2/include" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/edma3/inc" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/pspdrivers/inc" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/pspdrivers/drivers/inc" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/pspdrivers/soc/dm6437/dsp/inc" -d"_RELEASE" -mv6400+ -@"../../audio_video_encdec/evmDM6437/Release.lkf" "audio_params.c"
+
+[i2c_params.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -@"=c:/dvsdk_1_01_00_14/examples/audio_video_encdec/evmDM6437/xdcconfig/compiler.opt" -pdr -o3 -fr"c:/dvsdk_1_01_00_14/examples/audio_video_encdec/evmDM6437/Release" -i"c:/dvsdk_1_01_00_14/examples/audio_video_encdec/evmDM6437" -i"." -i"examples/common/evmDM6437" -i"C:/CCStudio_v3.3/boards/evmdm6437_v2/include" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/edma3/inc" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/pspdrivers/inc" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/pspdrivers/drivers/inc" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/pspdrivers/soc/dm6437/dsp/inc" -d"_RELEASE" -mv6400+ -@"../../audio_video_encdec/evmDM6437/Release.lkf" "i2c_params.c"
+
+[qdma_setup.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -@"=c:/dvsdk_1_01_00_14/examples/audio_video_encdec/evmDM6437/xdcconfig/compiler.opt" -pdr -o3 -fr"c:/dvsdk_1_01_00_14/examples/audio_video_encdec/evmDM6437/Release" -i"c:/dvsdk_1_01_00_14/examples/audio_video_encdec/evmDM6437" -i"." -i"examples/common/evmDM6437" -i"C:/CCStudio_v3.3/boards/evmdm6437_v2/include" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/edma3/inc" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/pspdrivers/inc" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/pspdrivers/drivers/inc" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/pspdrivers/soc/dm6437/dsp/inc" -d"_RELEASE" -mv6400+ -@"../../audio_video_encdec/evmDM6437/Release.lkf" "qdma_setup.c"
+
+[speech_encdec.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -@"=c:/dvsdk_1_01_00_14/examples/audio_video_encdec/evmDM6437/xdcconfig/compiler.opt" -pdr -o3 -fr"c:/dvsdk_1_01_00_14/examples/audio_video_encdec/evmDM6437/Release" -i"c:/dvsdk_1_01_00_14/examples/audio_video_encdec/evmDM6437" -i"." -i"examples/common/evmDM6437" -i"C:/CCStudio_v3.3/boards/evmdm6437_v2/include" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/edma3/inc" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/pspdrivers/inc" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/pspdrivers/drivers/inc" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/pspdrivers/soc/dm6437/dsp/inc" -d"_RELEASE" -mv6400+ -@"../../audio_video_encdec/evmDM6437/Release.lkf" "speech_encdec.c"
+
+[video_encdec.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -@"=c:/dvsdk_1_01_00_14/examples/audio_video_encdec/evmDM6437/xdcconfig/compiler.opt" -pdr -o3 -fr"c:/dvsdk_1_01_00_14/examples/audio_video_encdec/evmDM6437/Release" -i"c:/dvsdk_1_01_00_14/examples/audio_video_encdec/evmDM6437" -i"." -i"examples/common/evmDM6437" -i"C:/CCStudio_v3.3/boards/evmdm6437_v2/include" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/edma3/inc" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/pspdrivers/inc" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/pspdrivers/drivers/inc" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/pspdrivers/soc/dm6437/dsp/inc" -d"_RELEASE" -mv6400+ -@"../../audio_video_encdec/evmDM6437/Release.lkf" "video_encdec.c"
+
+[main.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -@"=c:/dvsdk_1_01_00_14/examples/audio_video_encdec/evmDM6437/xdcconfig/compiler.opt" -pdr -o3 -fr"c:/dvsdk_1_01_00_14/examples/audio_video_encdec/evmDM6437/Release" -i"c:/dvsdk_1_01_00_14/examples/audio_video_encdec/evmDM6437" -i"." -i"examples/common/evmDM6437" -i"C:/CCStudio_v3.3/boards/evmdm6437_v2/include" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/edma3/inc" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/pspdrivers/inc" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/pspdrivers/drivers/inc" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/pspdrivers/soc/dm6437/dsp/inc" -d"_RELEASE" -mv6400+ -@"Release.lkf" "main.c"
+
+[cfg.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -@"=c:/dvsdk_1_01_00_14/examples/audio_video_encdec/evmDM6437/xdcconfig/compiler.opt" -pdr -o3 -fr"c:/dvsdk_1_01_00_14/examples/audio_video_encdec/evmDM6437/Release" -i"c:/dvsdk_1_01_00_14/examples/audio_video_encdec/evmDM6437" -i"." -i"examples/common/evmDM6437" -i"C:/CCStudio_v3.3/boards/evmdm6437_v2/include" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/edma3/inc" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/pspdrivers/inc" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/pspdrivers/drivers/inc" -i"C:/dvsdk_1_01_00_14/psp_1_00_02_00/pspdrivers/soc/dm6437/dsp/inc" -d"_RELEASE" -mv6400+ -@"../Release.lkf" "cfg.c"
+
+[Linking...] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -@"Release.lkf"
+<Linking>
+
+Build Complete,
+  0 Errors, 0 Warnings, 0 Remarks.

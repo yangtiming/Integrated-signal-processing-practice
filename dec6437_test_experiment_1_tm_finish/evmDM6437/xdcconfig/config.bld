@@ -1,0 +1,6 @@
+/* THIS IS A GENERATED FILE -- DO NOT EDIT */
+/* configuro was passed the target's name explicitly */
+var target  = xdc.module('ti.targets.C64P');
+Build.targets = [target];
+/* configuro was passed the target's rootDir explicitly */
+target.rootDir = 'C:/CCStudio_v3.3/C6000/cgtools';

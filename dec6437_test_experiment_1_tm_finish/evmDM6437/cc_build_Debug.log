@@ -1,0 +1,120 @@
+--------------------------  dec6437_test.pjt - Debug  --------------------------
+[audio_video_encdec.cfg] "C:\dvsdk_1_01_00_15\xdc_2_95_02\xs.exe" xdc.tools.configuro.ccs  --xdcpathsfile="xdcpaths.dat" -pti.platforms.evmDM6437 --tcf -t ti.targets.C64P -c "C:/CCStudio_v3.3/C6000/cgtools" --bios "C:/CCStudio_v3.3/bios_5_31_07" -o "xdcconfig" audio_video_encdec.cfg 
+
+Info: running XDC configuration using package path:
+C:\dvsdk_1_01_00_15\codec_engine_1_20_02\packages
+C:\dvsdk_1_01_00_15\codec_engine_1_20_02\examples
+C:\dvsdk_1_01_00_15\framework_components_1_20_03\packages
+C:\dvsdk_1_01_00_15\xdais_5_21\packages
+C:\dvsdk_1_01_00_15\codecs_1_10\packages
+C:\dvsdk_1_01_00_15\ndk_1_92_00_22_eval\packages
+C:\dvsdk_1_01_00_15\biosutils_1_00_02\packages
+C:\dvsdk_1_01_00_15\examples\common\evmDM6437
+C:\CCStudio_v3.3\bios_5_31_07\packages
+C:\dvsdk_1_01_00_15\xdc_2_95_02\packages
+
+
+The configuration step is now running:
+
+making package.mak (because of package.bld) ...
+generating interfaces for package xdcconfig (because package/package.xdc.xml is older than package.xdc) ...
+configuring audio_video_encdec.x64P from package/cfg/audio_video_encdec_x64P.cfg ...
+ti.sdo.ce.osal.close() ...
+ti.sdo.ce.osal.validate() ...
+warning: xdc.cfg.Program: "C:/dvsdk_1_01_00_15/xdc_2_95_02/packages/xdc/runtime/package.xs", line 57: xdc.cfg.Program : assignment to Program.system is deprecated
+    will link with ti.sdo.ce.osal:lib/osal_bios.a64P
+    will link with ti.sdo.fc.acpy3:acpy3.a64P
+    will link with ti.bios.utils:lib/utils.a64P
+    will link with ti.sdo.fc.dman3:dman3Cfg.a64P
+    will link with ti.sdo.fc.dskt2:dskt2.a64P
+    will link with ti.sdo.ce.trace:lib/gt.a64P
+cl64P package/cfg/audio_video_encdec_x64P.c ...
+asm64P package/cfg/audio_video_encdec_x64Pcfg.s62 ...
+cl64P package/cfg/audio_video_encdec_x64Pcfg_c.c ...
+
+[audio_params.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -@"=C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/xdcconfig/compiler.opt" -pdr -fr"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/Debug" -i"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437" -i"." -i"./include" -i"C:/dvsdk_1_01_00_15/examples/common/evmDM6437" -i"/include" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/edma3/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/drivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/soc/dm6437/dsp/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/example/network/helloWorld/evmdm6437/include" -d"_DEBUG" -mv6400+ -@"Debug.lkf" "audio_params.c"
+
+[boot.asm] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -@"=C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/xdcconfig/compiler.opt" -pdr -fr"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/Debug" -i"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437" -i"." -i"./include" -i"C:/dvsdk_1_01_00_15/examples/common/evmDM6437" -i"/include" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/edma3/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/drivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/soc/dm6437/dsp/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/example/network/helloWorld/evmdm6437/include" -d"_DEBUG" -mv6400+ -@"Debug.lkf" "boot.asm"
+
+[evmdm6437init2.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -@"=C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/xdcconfig/compiler.opt" -pdr -fr"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/Debug" -i"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437" -i"." -i"./include" -i"C:/dvsdk_1_01_00_15/examples/common/evmDM6437" -i"/include" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/edma3/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/drivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/soc/dm6437/dsp/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/example/network/helloWorld/evmdm6437/include" -d"_DEBUG" -mv6400+ -@"Debug.lkf" "evmdm6437init2.c"
+
+[helloWorld2.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -@"=C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/xdcconfig/compiler.opt" -pdr -fr"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/Debug" -i"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437" -i"." -i"./include" -i"C:/dvsdk_1_01_00_15/examples/common/evmDM6437" -i"/include" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/edma3/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/drivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/soc/dm6437/dsp/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/example/network/helloWorld/evmdm6437/include" -d"_DEBUG" -mv6400+ -@"Debug.lkf" "helloWorld2.c"
+"helloWorld2.c", line 286: remark: parameter "h" was never referenced
+
+[i2c_params2.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -@"=C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/xdcconfig/compiler.opt" -pdr -fr"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/Debug" -i"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437" -i"." -i"./include" -i"C:/dvsdk_1_01_00_15/examples/common/evmDM6437" -i"/include" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/edma3/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/drivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/soc/dm6437/dsp/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/example/network/helloWorld/evmdm6437/include" -d"_DEBUG" -mv6400+ -@"Debug.lkf" "i2c_params2.c"
+
+[main.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -@"=C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/xdcconfig/compiler.opt" -pdr -fr"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/Debug" -i"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437" -i"." -i"./include" -i"C:/dvsdk_1_01_00_15/examples/common/evmDM6437" -i"/include" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/edma3/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/drivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/soc/dm6437/dsp/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/example/network/helloWorld/evmdm6437/include" -d"_DEBUG" -mv6400+ -@"Debug.lkf" "main.c"
+"main.c", line 93: warning: variable "attrsMytest" was declared but never referenced
+"main.c", line 203: remark: controlling expression is constant
+"main.c", line 228: remark: controlling expression is constant
+"main.c", line 236: warning: last line of file ends without a newline
+"main.c", line 200: warning: variable "i" was declared but never referenced
+"evmdm6437_uart.h", line 67: remark: variable "UART_MODULE_0" was declared but never referenced
+"evmdm6437_uart.h", line 68: remark: variable "UART_MODULE_1" was declared but never referenced
+
+[qdma_setup2.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -@"=C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/xdcconfig/compiler.opt" -pdr -fr"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/Debug" -i"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437" -i"." -i"./include" -i"C:/dvsdk_1_01_00_15/examples/common/evmDM6437" -i"/include" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/edma3/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/drivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/soc/dm6437/dsp/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/example/network/helloWorld/evmdm6437/include" -d"_DEBUG" -mv6400+ -@"Debug.lkf" "qdma_setup2.c"
+
+[speech_test.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -@"=C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/xdcconfig/compiler.opt" -pdr -fr"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/Debug" -i"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437" -i"." -i"./include" -i"C:/dvsdk_1_01_00_15/examples/common/evmDM6437" -i"/include" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/edma3/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/drivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/soc/dm6437/dsp/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/example/network/helloWorld/evmdm6437/include" -d"_DEBUG" -mv6400+ -@"Debug.lkf" "speech_test.c"
+"speech_test.c", line 275: remark: parameter "enc" was never referenced
+"speech_test.c", line 275: remark: parameter "dec" was never referenced
+"speech_test.c", line 278: warning: variable "inBufDesc" was set but never used
+"speech_test.c", line 279: warning: variable "encodedBufDesc" was set but never used
+"speech_test.c", line 280: warning: variable "outBufDesc" was set but never used
+"speech_test.c", line 281: warning: variable "status" was declared but never referenced
+"speech_test.c", line 285: warning: variable "decInArgs" was set but never used
+"speech_test.c", line 286: warning: variable "decOutArgs" was set but never used
+"speech_test.c", line 288: warning: variable "encInArgs" was set but never used
+"speech_test.c", line 289: warning: variable "encOutArgs" was set but never used
+"speech_test.c", line 290: warning: variable "j" was declared but never referenced
+"speech_test.c", line 298: warning: variable "inchan_R" was set but never used
+"speech_test.c", line 299: warning: variable "delaytmp_L" was declared but never referenced
+"speech_test.c", line 299: warning: variable "delaytmp_R" was declared but never referenced
+"speech_test.c", line 300: warning: variable "sum_L" was declared but never referenced
+"speech_test.c", line 300: warning: variable "sum_R" was declared but never referenced
+
+[uart485.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -@"=C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/xdcconfig/compiler.opt" -pdr -fr"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/Debug" -i"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437" -i"." -i"./include" -i"C:/dvsdk_1_01_00_15/examples/common/evmDM6437" -i"/include" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/edma3/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/drivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/soc/dm6437/dsp/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/example/network/helloWorld/evmdm6437/include" -d"_DEBUG" -mv6400+ -@"Debug.lkf" "uart485.c"
+"uart485.c", line 29: remark: controlling expression is constant
+"uart485.c", line 37: remark: controlling expression is constant
+"uart485.c", line 64: remark: controlling expression is constant
+"evmdm6437_uart.h", line 67: remark: variable "UART_MODULE_0" was declared but never referenced
+"evmdm6437_uart.h", line 68: remark: variable "UART_MODULE_1" was declared but never referenced
+
+[udpHello2.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -@"=C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/xdcconfig/compiler.opt" -pdr -fr"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/Debug" -i"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437" -i"." -i"./include" -i"C:/dvsdk_1_01_00_15/examples/common/evmDM6437" -i"/include" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/edma3/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/drivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/soc/dm6437/dsp/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/example/network/helloWorld/evmdm6437/include" -d"_DEBUG" -mv6400+ -@"Debug.lkf" "udpHello2.c"
+
+[video_test.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -@"=C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/xdcconfig/compiler.opt" -pdr -fr"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/Debug" -i"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437" -i"." -i"./include" -i"C:/dvsdk_1_01_00_15/examples/common/evmDM6437" -i"/include" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/edma3/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/drivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/soc/dm6437/dsp/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/example/network/helloWorld/evmdm6437/include" -d"_DEBUG" -mv6400+ -@"Debug.lkf" "video_test.c"
+"video_test.c", line 97: warning: variable "ce" was declared but never referenced
+"video_test.c", line 101: warning: variable "encStatus" was declared but never referenced
+"video_test.c", line 102: warning: variable "vencParams" was declared but never referenced
+"video_test.c", line 103: warning: variable "encDynParams" was declared but never referenced
+"video_test.c", line 105: warning: variable "decStatus" was declared but never referenced
+"video_test.c", line 106: warning: variable "vdecParams" was declared but never referenced
+"video_test.c", line 107: warning: variable "decDynParams" was declared but never referenced
+"video_test.c", line 381: warning: variable "Y" was set but never used
+"video_test.c", line 599: remark: parameter "enc" was never referenced
+"video_test.c", line 599: remark: parameter "dec" was never referenced
+"video_test.c", line 601: warning: variable "frame" was declared but never referenced
+"video_test.c", line 603: warning: variable "inBufDesc" was set but never used
+"video_test.c", line 604: warning: variable "encodedBufDesc" was set but never used
+"video_test.c", line 605: warning: variable "outBufDesc" was set but never used
+"video_test.c", line 606: warning: variable "status" was declared but never referenced
+"video_test.c", line 612: warning: variable "decInArgs" was set but never used
+"video_test.c", line 613: warning: variable "decOutArgs" was set but never used
+"video_test.c", line 615: warning: variable "encInArgs" was set but never used
+"video_test.c", line 616: warning: variable "encOutArgs" was set but never used
+"video_test.c", line 619: warning: variable "encoded" was set but never used
+"video_test.c", line 72: warning: variable "decoderName" was declared but never referenced
+"video_test.c", line 73: warning: variable "encoderName" was declared but never referenced
+"video_test.c", line 74: warning: variable "engineName" was declared but never referenced
+"video_test.c", line 76: warning: variable "progName" was declared but never referenced
+"video_test.c", line 255: warning: function "initVE_StaticParams" was declared but never referenced
+"video_test.c", line 277: warning: function "initVE_DynamicParams" was declared but never referenced
+"video_test.c", line 296: warning: function "initVD_StaticParams" was declared but never referenced
+"video_test.c", line 314: warning: function "initVD_DynamicParams" was declared but never referenced
+
+[cfg.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -@"=C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/xdcconfig/compiler.opt" -pdr -fr"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/Debug" -i"C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437" -i"." -i"./include" -i"C:/dvsdk_1_01_00_15/examples/common/evmDM6437" -i"/include" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/edma3/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/drivers/inc" -i"C:/dvsdk_1_01_00_15/psp_1_00_02_00/pspdrivers/soc/dm6437/dsp/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/inc" -i"C:/dvsdk_1_01_00_15/ndk_1_92_00_22_eval/packages/ti/ndk/example/network/helloWorld/evmdm6437/include" -d"_DEBUG" -mv6400+ -@"../Debug.lkf" "cfg.c"
+
+[Linking...] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -@"Debug.lkf"
+<Linking>
+
+Build Complete,
+  0 Errors, 43 Warnings, 14 Remarks.

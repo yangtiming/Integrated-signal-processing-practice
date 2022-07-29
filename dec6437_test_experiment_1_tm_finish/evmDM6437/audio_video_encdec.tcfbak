@@ -1,0 +1,84 @@
+/*
+ *  ======== audio_video_encdec.tcf ========
+ *
+ */
+
+/* Load the evmDM6437 platform memory map.  */
+utils.loadPlatform("ti.platforms.evmDM6437");
+
+/* Import settings common to all DM6437 DVSDK examples. */
+utils.importFile("common.tci");
+
+/* PSP configuration */
+/* Create semaphores for Transmit/Receive: */
+bios.SEM.create("semRx");
+bios.SEM.create("semTx");
+
+/* Enable the GIO module: */
+bios.GIO.ENABLEGIO = 1;
+
+/* PSP configuration */
+
+/* Enable ECM Handler */
+bios.ECM.ENABLE = 1;
+
+/* ECM configuration - manually Reflect these settings in soc.h */
+bios.HWI.instance("HWI_INT7").interruptSelectNumber = 0;
+bios.HWI.instance("HWI_INT8").interruptSelectNumber = 1;
+bios.HWI.instance("HWI_INT9").interruptSelectNumber = 2;
+bios.HWI.instance("HWI_INT10").interruptSelectNumber = 3;
+
+/* Create user devices for I2C needed by audio and video drivers */
+bios.UDEV.create("I2C0");
+bios.UDEV.instance("I2C0").fxnTableType = "IOM_Fxns";
+bios.UDEV.instance("I2C0").params = prog.extern("I2C_devParams");
+bios.UDEV.instance("I2C0").fxnTable = prog.extern("I2CMD_FXNS");
+
+/* udevCodec (For AIC with McBSP) */
+bios.UDEV.create("udevCodec");
+bios.UDEV.instance("udevCodec").fxnTableType = "IOM_Fxns";
+bios.UDEV.instance("udevCodec").fxnTable = prog.extern("EVMDM6437_EDMA_AIC33_FXNS");
+bios.UDEV.instance("udevCodec").initFxn = prog.extern("EVMDM6437_EDMA_AIC33_init0");
+bios.UDEV.instance("udevCodec").params = null;
+bios.UDEV.instance("udevCodec").deviceId = 0;
+bios.UDEV.instance("udevCodec").deviceGlobalDataPtr = null;
+
+/* Video front end device (Capture) */
+bios.UDEV.create("VPFE0");
+bios.UDEV.instance("VPFE0").fxnTable = prog.extern("VPFEMD_FXNS");
+bios.UDEV.instance("VPFE0").fxnTableType = "IOM_Fxns";
+
+/* Video back end device (Display */
+bios.UDEV.create("VPBE0");
+bios.UDEV.instance("VPBE0").fxnTable = prog.extern("VPBEMD_FXNS");
+bios.UDEV.instance("VPBE0").fxnTableType = "IOM_Fxns";
+
+if (config.hasReportedError == false) {
+bios.GBL.CALLUSERINITFXN = 1;
+bios.GBL.USERINITFXN = prog.extern("EVMDM6437_init");
+bios.PRD.create("prdNdk");
+bios.PRD.instance("prdNdk").order = 1;
+bios.PRD.instance("prdNdk").period = 100;
+bios.PRD.instance("prdNdk").fxn = prog.extern("llTimerTick");
+bios.HOOK.create("hookNdk");
+bios.HOOK.instance("hookNdk").initFxn = prog.extern("NDK_hookInit");
+bios.HOOK.instance("hookNdk").createFxn = prog.extern("NDK_hookCreate");
+bios.LOG.create("DVTEvent_Log");
+bios.LOG.instance("DVTEvent_Log").bufLen = 8192;
+bios.GBL.C64PLUSMAR128to159 = 0x00000001;
+bios.TSK.instance("TSK_idle").order = 1;
+bios.TSK.create("tskNdkStackTest");
+bios.TSK.instance("tskNdkStackTest").order = 3;
+bios.TSK.instance("tskNdkStackTest").fxn = prog.extern("StackTest");
+bios.TSK.instance("tskNdkStackTest").stackSize = 4096;
+bios.TSK.instance("tskNdkStackTest").priority = 5;
+bios.TSK.instance("tskNdkStackTest").stackSize = 40960;
+bios.GBL.CLKOUT = 486.0000;
+bios.UDEV.instance("I2C0").destroy();
+bios.UDEV.instance("udevCodec").destroy();
+bios.UDEV.instance("VPBE0").destroy();
+bios.UDEV.instance("VPFE0").destroy();
+// !GRAPHICAL_CONFIG_TOOL_SCRIPT_INSERT_POINT!
+    prog.gen();
+}
+

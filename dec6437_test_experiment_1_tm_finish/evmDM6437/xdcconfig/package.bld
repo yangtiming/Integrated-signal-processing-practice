@@ -1,0 +1,72 @@
+/* THIS IS A GENERATED FILE -- DO NOT EDIT */
+
+var targ = xdc.module('ti.targets.C64P');
+/* configuro was told the platform explicitly */
+var platform = 'ti.platforms.evmDM6437';
+/* include support for DSP/BIOS 5.X */
+Pkg.uses = ["ti/bios/include"];
+
+/* decide whether to make an assembly or an executable */
+var makeAssembly = false;
+
+
+var exe = Pkg[makeAssembly? 'addAssembly': 'addExecutable'](
+    'audio_video_encdec',
+    targ,
+    platform,
+    {
+        cfgScript: 'audio_video_encdec.tcf',
+        profile: 'release',
+    }
+);
+
+Pkg.makeEpilogue = "include custom.mak";
+
+/*
+ * Generate the compiler.opt file
+ * Do this here instead of during the initial creation of the configuro
+ * package, because the contents of any config.bld script are unknown
+ * at that time. Config.bld can't be executed until the XDC build phase.
+ */
+if (makeAssembly) {
+    var suffix  = targ.dllExt || '.p' + targ.suffix;
+}
+else {
+    var suffix  = targ.execExt || '.x' + targ.suffix;
+}
+var thisObj = {
+    cfg:        'audio_video_encdec.tcf',
+    outputPath: 'C:/dvsdk_1_01_00_15/examples/dec6437_test_experiment_1/evmDM6437/xdcconfig',
+    exeName:    'audio_video_encdec' + suffix,
+    exeIntName: 'audio_video_encdec' + suffix.replace('.', '_'),
+    targ:       targ,
+    legacyTcf:  true,
+    linkerCommandFile: 'linker.cmd',
+    makeAssembly: makeAssembly
+};
+var tmpl = xdc.loadTemplate('xdc/tools/configuro/template/compiler.opt.xdt');
+tmpl.genFile('compiler.opt', thisObj, [], false);
+
+/*
+ * Generate the custom makefile.
+ */
+var tmpl = xdc.loadTemplate('xdc/tools/configuro/template/' + 
+    (makeAssembly? 'custom.mak.asm.xdt' : 'custom.mak.exe.xdt'));
+tmpl.genFile('custom.mak', thisObj, [], false);
+Pkg.makeEpilogue = "include custom.mak";
+
+/*
+ * Generate the package script.
+ */
+var tmpl = xdc.loadTemplate('xdc/tools/configuro/template/package.xs.xdt');
+tmpl.genFile('package.xs', thisObj, [], false);
+
+if (makeAssembly) {
+/*
+ * Generate the linker options into a staging file, so that the presence or
+ * age of the advertised linker command file can be the makefile trigger to
+ * rebuild the package from the user's config script.
+ */
+    var tmpl = xdc.loadTemplate('xdc/tools/configuro/template/linker.cmd.asm.xdt');
+    tmpl.genFile('linker.cmd.cp', thisObj, [], false);
+}

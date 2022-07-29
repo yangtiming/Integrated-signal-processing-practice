@@ -1,0 +1,10 @@
+package.xdc
+package.xs
+package/xdcconfig.ccs101
+package/.vers_g101
+package/.vers_r100
+package/.vers_b100
+package/xdcconfig.sch
+package/package_xdcconfig.c
+package/package.defs.h
+package/package.xdc.xml

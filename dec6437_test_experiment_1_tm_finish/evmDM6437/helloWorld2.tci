@@ -1,0 +1,27 @@
+/*
+ *  Copyright 2007 by Texas Instruments Incorporated.
+ *  All rights reserved. Property of Texas Instruments Incorporated.
+ *  Restricted rights to use, duplicate or disclose this code are
+ *  granted through contract.
+ *
+ *  @(#) TCP/IP_Network_Developers_Kit 1.92.00.22 01-10-2007 (ndk-b22)
+ */
+// Client Example Specific requirements
+
+utils.importFile('ndk.tci');
+
+/* The following DSP/BIOS Features are enabled.  */
+bios.enableMemoryHeaps(prog);
+bios.enableRealTimeAnalysis(prog);
+bios.enableRtdx(prog);
+bios.enableTskManager(prog);
+
+bios.tskNdkStackTest 			= bios.TSK.create("tskNdkStackTest");
+bios.tskNdkStackTest.fxn 		= prog.extern("StackTest");
+bios.tskNdkStackTest.stackSize 		= 0x1000;
+bios.tskNdkStackTest.priority 		= 0x5;
+
+// Check that stack size is big enough for the application
+if (bios.MEM.STACKSIZE < 0x1000) {
+	bios.MEM.STACKSIZE += 0x1000;
+}

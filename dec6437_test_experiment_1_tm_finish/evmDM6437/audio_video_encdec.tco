@@ -1,0 +1,6 @@
+# GENERATED FILE -- DO NOT EDIT!
+# This file contains tconf options for file "audio_video_encdec.tcf",
+# for use by the Gconf graphical configuration tool.
+# The options are exported from the following CCS project: 
+# C:\dvsdk_1_01_00_15\examples\dec6437_test_experiment_1\evmDM6437\dec6437_test.pjt, "Debug" configuration.
+-Dconfig.importPath=".;%BIOSDVSDK_INSTALL_DIR%/examples/common/evmDM6437;"

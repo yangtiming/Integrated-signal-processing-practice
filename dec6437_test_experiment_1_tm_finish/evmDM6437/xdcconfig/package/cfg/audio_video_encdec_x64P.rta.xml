@@ -1,0 +1,10 @@
+<xdc.runtime.Types.RtaDecoderData>
+  <argSize>4</argSize>
+  <eventSize>48</eventSize>
+  <modMap-length>0</modMap-length>
+  <evtMap-length>1</evtMap-length>
+  <evtMap key="undefined">
+    <id>undefined</id>
+    <msg>--%3E+delete%3A+%28%25p%29</msg>
+  </evtMap>
+</xdc.runtime.Types.RtaDecoderData>

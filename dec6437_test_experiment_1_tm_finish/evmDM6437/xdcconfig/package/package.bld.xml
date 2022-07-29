@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="xdcconfig" version="">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/audio_video_encdec_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/audio_video_encdec_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/audio_video_encdec_x64P.c"/>
+    </sources>
+    <configurations>
+        <srcFile name="audio_video_encdec.tcf"/>
+    </configurations>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/audio_video_encdec_x64P.mak" src="package.bld"/>
+        <srcFile name="package/cfg/audio_video_encdec_x64Pcfg.o64P.dep" src="package/cfg/audio_video_encdec_x64Pcfg.s62"/>
+        <srcFile name="package/cfg/audio_video_encdec_x64Pcfg_c.o64P.dep" src="package/cfg/audio_video_encdec_x64Pcfg_c.c"/>
+        <srcFile name="package/cfg/audio_video_encdec_x64P.o64P.dep" src="package/cfg/audio_video_encdec_x64P.c"/>
+        <srcFile name="package/cfg/audio_video_encdec_x64P.dep" src="package/cfg/audio_video_encdec_x64P.cfg"/>
+        <srcFile name="package/rel/xdcconfig.tar.dep" src="package/rel/xdcconfig.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C64P"
+            version="ti.targets.C64P{1,0,6.0,8"
+            platform="ti.platforms.sim6xxx:TMS320CDM420"
+            isa="64P"
+            suffix="64P"
+            rootDir="C:/CCStudio_v3.3/C6000/cgtools"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <executables>
+    <executable name="audio_video_encdec"
+        pname="audio_video_encdec.x64P"
+        target="ti.targets.C64P"
+        platform="ti.platforms.evmDM6437"
+        profile="release"
+        xCfgScript="package/cfg/audio_video_encdec_x64P.cfg"
+        xCfgPrefix="package/cfg/audio_video_encdec_x64P"
+        cfgScript="audio_video_encdec.tcf"
+        />
+    </executables>
+    <tests>
+    <test exeName="audio_video_encdec.x64P"
+        args=""
+        groupName="audio_video_encdec.x64P"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="xdcconfig"
+        pname="xdcconfig.tar"
+        label="default"
+    >
+        <file name="package/package.xdc.xml"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.xdc.inc"/>
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.rel.dot"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

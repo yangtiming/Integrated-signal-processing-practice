@@ -1,0 +1,46 @@
+clean::
+	$(RM) package/xdcconfig.ccs101
+	$(RM) package/.vers_g101
+	$(RM) package/.vers_r100
+	$(RM) package/.vers_b100
+	$(RM) package/xdcconfig.sch
+	$(RM) package/package_xdcconfig.c
+	$(RM) package/package.defs.h
+	$(RM) package/package.xdc.xml
+
+.interfaces: package/xdcconfig.ccs101 package/.vers_g101 package/.vers_r100 package/.vers_b100 package/xdcconfig.sch package/package_xdcconfig.c package/package.defs.h package/package.xdc.xml 
+.interfaces: 
+
+# schema include file dependencies
+package.xs:
+package/package.xdc.xml: package.xs
+
+# schema update dependencies
+package/package.xdc.xml: xdc/IPackage.xdc
+xdc/IPackage.xdc:
+vpath xdc/IPackage.xdc $(XPKGVPATH)
+
+ifneq (clean,$(MAKECMDGOALS))
+package/package.xdc.xml: C:/dvsdk_1_01_00_15/xdc_2_95_02/packages/xdc/shelf/java/js.jar
+C:/dvsdk_1_01_00_15/xdc_2_95_02/packages/xdc/shelf/java/js.jar:
+package/package.xdc.xml: C:/dvsdk_1_01_00_15/xdc_2_95_02/packages/xdc/services/global/java/package.jar
+C:/dvsdk_1_01_00_15/xdc_2_95_02/packages/xdc/services/global/java/package.jar:
+package/package.xdc.xml: C:/dvsdk_1_01_00_15/xdc_2_95_02/packages/xdc/shelf/java/xbean.jar
+C:/dvsdk_1_01_00_15/xdc_2_95_02/packages/xdc/shelf/java/xbean.jar:
+package/package.xdc.xml: C:/dvsdk_1_01_00_15/xdc_2_95_02/packages/xdc/shelf/java/antlr.jar
+C:/dvsdk_1_01_00_15/xdc_2_95_02/packages/xdc/shelf/java/antlr.jar:
+package/package.xdc.xml: C:/dvsdk_1_01_00_15/xdc_2_95_02/packages/xdc/services/intern/gen/java/package.jar
+C:/dvsdk_1_01_00_15/xdc_2_95_02/packages/xdc/services/intern/gen/java/package.jar:
+package/package.xdc.xml: C:/dvsdk_1_01_00_15/xdc_2_95_02/packages/xdc/shelf/java/junit.jar
+C:/dvsdk_1_01_00_15/xdc_2_95_02/packages/xdc/shelf/java/junit.jar:
+package/package.xdc.xml: C:/dvsdk_1_01_00_15/xdc_2_95_02/packages/xdc/services/intern/cmd/java/package.jar
+C:/dvsdk_1_01_00_15/xdc_2_95_02/packages/xdc/services/intern/cmd/java/package.jar:
+package/package.xdc.xml: C:/dvsdk_1_01_00_15/xdc_2_95_02/packages/xdc/services/spec/java/package.jar
+C:/dvsdk_1_01_00_15/xdc_2_95_02/packages/xdc/services/spec/java/package.jar:
+package/package.xdc.xml: C:/dvsdk_1_01_00_15/xdc_2_95_02/packages/xdc/shelf/java/tar.jar
+C:/dvsdk_1_01_00_15/xdc_2_95_02/packages/xdc/shelf/java/tar.jar:
+package/package.xdc.xml: C:/dvsdk_1_01_00_15/xdc_2_95_02/packages/xdc/services/intern/xsr/java/package.jar
+C:/dvsdk_1_01_00_15/xdc_2_95_02/packages/xdc/services/intern/xsr/java/package.jar:
+endif
+# goals for files generated during schema generation but unspecified by schema's pattern rule
+
