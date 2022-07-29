@@ -4,6 +4,8 @@ Integrated signal processing practice
 
 
 ## Introduction
+Purpose:To master the method of edge detection of video image by DSP
+
 1.Edge detection
 
 2.Adpot Median filtering and Histogram equalization to reduce the image noise after edge detection.
