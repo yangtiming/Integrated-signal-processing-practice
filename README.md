@@ -11,6 +11,10 @@ Purpose:To master the method of edge detection of video image by DSP
 2.Adpot Median filtering and Histogram equalization to reduce the image noise after edge detection.
 
 
+### SEED - DEC6437 hardware board
+
+<img src="https://github.com/yangtiming/Integrated-signal-processing-practice/blob/master/imgs/broad.png" width="600px">
+
 ## results
 
 ### final result compare
